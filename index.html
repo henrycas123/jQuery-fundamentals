@@ -2,8 +2,67 @@
 <html>
 <head>
 	<title></title>
+	<style>
+		.image {
+			width: 300px;
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+	<script>
+	$(document ).ready(function() {
+	    $("#home-content").append("<header>Welcome to fresh restaraunt</header>")
+	    $("#home-content").append('<img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/Mavericks_Surf_Contest_2010b.jpg" class="image">')
+	    $("#home-content").append("<p>Hey this is the best food you can find in the area</p>")
+	    $("#contact").click(function(event){
+	    	// console.log(event)
+	    	$("#home-content").hide()
+	    	$("#menu-content").hide()
+	    	$("#contact-content").show()
+	    })
+	    $("#home").click(function(event){
+	    	// console.log(event)
+	    	$("#contact-content").hide()
+	    	$("#menu-content").hide()
+	    	$("#home-content").show()
+	    })
+	    $("#menu").click(function(event){
+	    	// console.log(event)
+	    	$("#home-content").hide()
+	    	$("#contact-content").hide()
+	    	$("#menu-content").show()
+	    })
+	});
+	</script>
 </head>
 <body>
+		<div id="content">
+			<div class="tab-nav">
+				<ul>
+					<li id="home"><a href="#home-content" class="tabclick active"></a>Home</li>
+					<li id="contact"><a href="#contact-content" class="tabclick"></a>Contact</li>
+					<li id="menu"><a href="#menu-content" class="tabclick"></a>Menu</li>
+				</ul>
+		</div>
+		<div id="home-content" class="tab">
+			<p></p>
+		</div>
+		<div id="contact-content" class="tab" style="display: none">
+			<p>
+				Address: 1917 New Street Ave San Fransisco,CA 92034
+				Phone: 925-888-8888
+
+			</p>
+		</div>
+		<div id="menu-content" class="tab" style="display: none">
+			<p>
+				Dinner Menu:
+				1. Chicken Salad
+				2. Koby Beef
+				3. Steak
+			</p>
+		</div>
+		</div>
+		
 
 </body>
 </html>
